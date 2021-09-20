@@ -1,0 +1,122 @@
+<h1>Welcome to Topic Updation page</h1>
+<%- include ("./partials/messages") %>
+<form action="/dashboard/update-topic" method="POST">
+  <div class="form-group">
+    <label for="topic">Please select Topic to be Updated</label>
+    <select class="form-control" id="topic" name="topic">
+      <% topics.forEach(function(item, index){ %>
+      <option><%= item %></option>
+      <% }) %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="subtopic">Sub-Topic</label>
+    <input
+      type="text"
+      class="form-control"
+      id="subtopic"
+      aria-describedby="subtopic"
+      placeholder="Enter Sub-Topic"
+      name="subtopic"
+      required
+    />
+    <small id="topic" class="form-text text-muted">Enter the Sub-Topic</small>
+  </div>
+
+  <div class="form-group">
+    <label for="activities">Activities</label>
+    <input
+      type="text"
+      class="form-control"
+      id="activities"
+      aria-describedby="activities"
+      placeholder="Enter Activity name"
+      name="activities"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="request">How Request will come to Security Team </label>
+    <input
+      type="text"
+      class="form-control"
+      id="request"
+      aria-describedby="request"
+      placeholder="Enter the mode"
+      name="request"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="approval_pp8">Approval Required PP8-500 (CV) </label>
+    <input
+      type="text"
+      class="form-control"
+      id="approval_pp8"
+      aria-describedby="approval_pp8"
+      placeholder="Approval PP8-500 (CV)"
+      name="approval_pp8"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="approval_tp8">Approval Required TP8-500 (PV) </label>
+    <input
+      type="text"
+      class="form-control"
+      id="approval_tp8"
+      aria-describedby="approval_tp8"
+      placeholder="Approval TP8-500 (PV)"
+      name="approval_tp8"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="sod_pp8">SOD Approval PP8-500 (CV) </label>
+    <input
+      type="text"
+      class="form-control"
+      id="sod_pp8"
+      aria-describedby="sod_pp8"
+      placeholder="SOD Approval PP8-500 (CV)"
+      name="sod_pp8"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="sod_tp8">SOD Approval TP8-500 (PV) </label>
+    <input
+      type="text"
+      class="form-control"
+      id="sod_tp8"
+      aria-describedby="sod_tp8"
+      placeholder="SOD Approval TP8-500 (PV)"
+      name="sod_tp8"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="basis_critical_approval">Basis Critical Approval </label>
+    <input
+      type="text"
+      class="form-control"
+      id="basis_critical_approval"
+      aria-describedby="basis_critical_approval"
+      placeholder="Basis Critical Approver"
+      name="basis_critical_approval"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="comments">Additional Approvals/Comments </label>
+    <textarea
+      class="form-control"
+      id="comments"
+      rows="3"
+      name="comments"
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Topic</button>
+</form>

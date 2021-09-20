@@ -1,0 +1,12 @@
+<%- include ("./partials/messages") %>
+<h1>Topics in PP8-500 / TP8-500</h1>
+<ul class="list-group mt-4">
+  <% data.forEach((item1, index)=>{ %>
+  <li class="list-group-item list-group-item-primary"><%= item1.category %></li>
+  <% item1.topic.forEach((item, index) =>{ %>
+  <li class="list-group-item">
+    <% const url_comp = encodeURIComponent(item); %>
+    <a href="/dashboard/topic?topic=<%= url_comp %>"><%=item%></a>
+  </li>
+  <% }); %> <% }); %>
+</ul>

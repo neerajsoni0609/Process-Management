@@ -1,0 +1,34 @@
+<%- include ("./partials/messages") %>
+<h2>Topic: <%=result1.topic%></h2>
+<ul class="list-group mt-4">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Subtopic</th>
+        <th scope="col">Activities</th>
+        <th scope="col">How Request will come to Security Team</th>
+        <th scope="col">Approval Required PP8-500 (CV)</th>
+        <th scope="col">Approval Required TP8-500 (PV)</th>
+        <th scope="col">SOD Approval PP8-500 (CV)</th>
+        <th scope="col">SOD Approval TP8-500 (PV)</th>
+        <th scope="col">Basis Critical Approval</th>
+        <th scope="col">Additional Approvals/Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% result1.subtopic.forEach((item1, index)=>{ %>
+      <tr>
+        <td></a><%= item1.subtopic %></td>
+        <td><%= item1.activities %></td>
+        <td><%= item1.request %></td>
+        <td><%= item1.approval.approval_pp8 %></td>
+        <td><%= item1.approval.approval_tp8 %></td>
+        <td><%= item1.sod.approval_pp8 %></td>
+        <td><%= item1.sod.approval_tp8 %></td>
+        <td><%= item1.basis_critical_approval %></td>
+        <td><%= item1.comments %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</ul>
